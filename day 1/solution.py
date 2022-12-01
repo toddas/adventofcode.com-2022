@@ -32,12 +32,12 @@ def main():
             total_unsorted.append(total_list)
             total_list = 0
             rations.clear()
+    print('part1: '+max(total_unsorted))
     top3 = Nmaxelements(total_unsorted, 3)
     top3_total = 0
     for numb in top3:
         top3_total += numb
-    print(top3)
-    print(top3_total)
+    print('part2: '+str(top3_total))
     file.close()
 
 
