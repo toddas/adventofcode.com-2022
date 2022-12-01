@@ -1,6 +1,22 @@
 rations = []
 total_unsorted = []
 
+# https://www.geeksforgeeks.org/python-program-to-find-n-largest-elements-from-a-list/
+def Nmaxelements(list1, N):
+    final_list = []
+
+    for i in range(0, N):
+        max1 = 0
+
+        for j in range(len(list1)):
+            if list1[j] > max1:
+                max1 = list1[j];
+
+        list1.remove(max1);
+        final_list.append(max1)
+
+    return (final_list)
+
 
 def main():
     total_list = 0
@@ -16,7 +32,12 @@ def main():
             total_unsorted.append(total_list)
             total_list = 0
             rations.clear()
-    print(max(total_unsorted))
+    top3 = Nmaxelements(total_unsorted, 3)
+    top3_total = 0
+    for numb in top3:
+        top3_total += numb
+    print(top3)
+    print(top3_total)
     file.close()
 
 
